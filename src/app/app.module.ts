@@ -1,34 +1,66 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
+import { NgModule, ErrorHandler } from '@angular/core';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+
+import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
+import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
+import { InfaqPage } from '../pages/infaq/infaq';
+import { PhotoPage } from '../pages/photo/photo';
+import { SekitarKitaPage } from '../pages/sekitar-kita/sekitar-kita';
+import { BeritaPage } from '../pages/berita/berita';
+import { DakwahPage } from '../pages/dakwah/dakwah';
+import { DetailArtikelPage } from '../pages/detail-artikel/detail-artikel';
+import { LoginPage } from '../pages/login/login';
+import { VideoListPage } from '../pages/video-list/video-list';
+import { VideoPage } from '../pages/video/video';
+import { DetailPhotoPage } from '../pages/detail-photo/detail-photo';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { RemoteServiceProvider } from '../providers/remote-service/remote-service';
+
+
+import { HttpClientModule } from '@angular/common/http';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { Toast } from '@ionic-native/toast';
+import { Geolocation } from '@ionic-native/geolocation';
+import { IonicImageViewerModule } from 'ionic-img-viewer';
+import { HttpModule } from '@angular/http';
+import { Globalization } from '@ionic-native/globalization';
+import { SeparatorPipe } from '../pipes/separator/separator';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    ListPage
+    HelloIonicPage,
+    ItemDetailsPage,
+    ListPage,
+	InfaqPage,
+	PhotoPage,BeritaPage,SekitarKitaPage,DakwahPage,DetailArtikelPage,LoginPage,VideoListPage,VideoPage,DetailPhotoPage,SeparatorPipe
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp),HttpClientModule,IonicImageViewerModule ,HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    ListPage
+    HelloIonicPage,
+    ItemDetailsPage,
+    ListPage,
+	InfaqPage,
+	PhotoPage,BeritaPage,SekitarKitaPage,DakwahPage,DetailArtikelPage,LoginPage,VideoListPage,VideoPage,DetailPhotoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RemoteServiceProvider,
+	BarcodeScanner,
+	Toast,Geolocation,Globalization
+    
   ]
 })
 export class AppModule {}

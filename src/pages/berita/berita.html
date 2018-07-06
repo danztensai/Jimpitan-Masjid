@@ -1,0 +1,60 @@
+<!--
+  Generated template for the BeritaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Berita</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="master">
+Berita
+
+<div *ngFor="let artikel of artikel">
+<ion-card>
+  <img src="{{artikel.image}}"/>
+  <ion-card-content>
+    <ion-card-title>
+      {{artikel.title}}
+      </ion-card-title>
+    <p [innerHTML]="transformHTML(artikel.deskripsi)">
+      
+    </p>
+  </ion-card-content>
+  <ion-row no-padding>
+  
+      <ion-col text-center>
+        <button  ion-button (click)="detailArtikel(artikel.id_article)" clear small color="danger" icon-start>
+          <ion-icon name='book'></ion-icon>
+          Read
+        </button>
+      </ion-col>
+      
+    </ion-row>
+</ion-card>
+</div>
+<ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="page < totalPage">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll> 
+<!-- <ion-list>
+    <ion-item *ngFor="let artikel of artikel">
+      <ion-avatar item-start>
+        <img src="{{artikel.image}}">
+      </ion-avatar>
+      <h2>{{artikel.title}}</h2>
+    </ion-item>
+	
+	  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="page < totalPage">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  </ion-list>
+
+
+</ion-content>
+-->

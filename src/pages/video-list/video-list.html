@@ -1,0 +1,59 @@
+<!--
+  Generated template for the BeritaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Video</ion-title>
+  </ion-navbar>
+</ion-header>
+<style>
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
+<ion-content padding>
+List Video
+<div *ngFor="let a of listVideo">
+<ion-card>
+ 	<div class="video-container">
+                    <iframe #videoIframe width="420" height="315" [src]="transform(a.video)" frameborder="0" allowfullscreen></iframe>
+    </div>
+  <ion-card-content>
+    <ion-card-title>
+      {{a.title}}
+      </ion-card-title>
+    <p>
+      {{a.deskripsi}}
+    </p>
+
+  </ion-card-content>
+  <ion-row no-padding>
+  
+      
+      
+    </ion-row>
+</ion-card>
+</div>
+
+    
+      
+
+
+</ion-content>

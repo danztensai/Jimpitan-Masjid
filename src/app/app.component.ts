@@ -1,10 +1,20 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+
+import { Platform, MenuController, Nav } from 'ionic-angular';
+
+import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
+import { ListPage } from '../pages/list/list';
+import { InfaqPage } from '../pages/infaq/infaq';
+import { PhotoPage } from '../pages/photo/photo';
+import { DetailArtikelPage } from '../pages/detail-artikel/detail-artikel';
+import { LoginPage } from '../pages/login/login';
+import { VideoListPage } from '../pages/video-list/video-list';
+
+
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,19 +22,26 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
-
+  // make HelloIonicPage the root (or first) page
+  rootPage = HelloIonicPage;
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform,
+    public menu: MenuController,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen
+  ) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
+    // set our app's pages
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Home', component: HelloIonicPage },
+      { title: 'Scan Jimpitan', component: InfaqPage },
+	  { title: 'Video', component : VideoListPage},
+	  { title: 'Photo', component: PhotoPage },
+	  { title: 'Login', component: LoginPage }
     ];
-
   }
 
   initializeApp() {
@@ -37,8 +54,9 @@ export class MyApp {
   }
 
   openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
+    // close the menu when clicking a link from the menu
+    this.menu.close();
+    // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
   }
 }

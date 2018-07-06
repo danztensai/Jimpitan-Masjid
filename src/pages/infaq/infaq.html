@@ -1,0 +1,72 @@
+<!--
+  Generated template for the InfaqPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Infaq</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+<h1>
+  <button ion-button color="dark" full round (click)="scan()">Scan Jimpitan</button>
+
+</h1>
+<ion-card *ngIf="productFound">
+  <ion-card-header>
+    <h2>Data Infaq</h2>
+	
+  </ion-card-header>
+  <ion-card-content>
+    <ul>
+	<div *ngIf="dataInfaq.status==0" >
+	  <li>Status Infaq     : Belum Melakukan Setoran </li>
+	</div>
+	<div *ngIf="dataInfaq.status==1" >
+	  <li>Status Infaq     : Sudah Melakukan Setoran </li>
+	</div>
+	  <li>Kode Barcode     : {{kodeBarcode}}</li>
+	  <li>Infaq Hari ini   : Rp.{{dataInfaq.hari | separator }}</li>
+      <li>Infaq Minggu Ini : Rp.{{dataInfaq.minggu | separator}}</li>
+      <li>Infaq Bulan ini  : Rp.{{dataInfaq.bulan | separator}}</li>
+	  <li>Infaq Total 	   : Rp.{{dataInfaq.total | separator}}</li>
+	  <div *ngIf="stsLogin == 0">
+   <ion-row no-padding>
+  
+      <ion-col text-center>
+        <button ion-button color="dark" full round (click)="inputSetoranInfaq()">Setor Infaq</button>
+		<button ion-button color="secondary" full round (click)="getLaporanInfaq()">Laporan Infaq</button>
+      </ion-col>
+      
+    </ion-row>
+ 
+
+</div>
+    </ul>
+  </ion-card-content>
+</ion-card>
+<ion-card *ngIf="laporanFound">
+  <ion-card-header>
+    <h2>Laporan Infaq {{currentLoggedinUsername}}</h2>
+	
+  </ion-card-header>
+  <ion-card-content>
+    <ul>
+	
+	  <li>Infaq Hari ini   : Rp.{{dataLaporan.hari | separator}}</li>
+      <li>Infaq Minggu Ini : Rp.{{dataLaporan.minggu | separator}}</li>
+      <li>Infaq Bulan ini  : Rp.{{dataLaporan.bulan | separator}}</li>
+	  <li>Infaq Total 	   : Rp.{{dataLaporan.total | separator}}</li>
+	 
+    </ul>
+  </ion-card-content>
+</ion-card>
+</ion-content>
