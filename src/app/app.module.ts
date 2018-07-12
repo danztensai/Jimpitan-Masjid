@@ -16,6 +16,10 @@ import { LoginPage } from '../pages/login/login';
 import { VideoListPage } from '../pages/video-list/video-list';
 import { VideoPage } from '../pages/video/video';
 import { DetailPhotoPage } from '../pages/detail-photo/detail-photo';
+import { InfaqInfoTabPage } from '../pages/infaq-info-tab/infaq-info-tab';
+import { InfaqAllInfoPage } from '../pages/infaq-all-info/infaq-all-info';
+import { InfaqPeruserPage } from '../pages/infaq-peruser/infaq-peruser';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -30,6 +34,8 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
 import { HttpModule } from '@angular/http';
 import { Globalization } from '@ionic-native/globalization';
 import { SeparatorPipe } from '../pipes/separator/separator';
+import { ChartsModule } from 'ng2-charts';
+
 
 @NgModule({
   declarations: [
@@ -38,11 +44,13 @@ import { SeparatorPipe } from '../pipes/separator/separator';
     ItemDetailsPage,
     ListPage,
 	InfaqPage,
-	PhotoPage,BeritaPage,SekitarKitaPage,DakwahPage,DetailArtikelPage,LoginPage,VideoListPage,VideoPage,DetailPhotoPage,SeparatorPipe
+	PhotoPage,BeritaPage,SekitarKitaPage,DakwahPage,DetailArtikelPage,LoginPage,VideoListPage,VideoPage,DetailPhotoPage,
+  SeparatorPipe,
+  InfaqInfoTabPage,InfaqAllInfoPage,InfaqPeruserPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),HttpClientModule,IonicImageViewerModule ,HttpModule
+    IonicModule.forRoot(MyApp),HttpClientModule,IonicImageViewerModule ,HttpModule,ChartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,7 +59,8 @@ import { SeparatorPipe } from '../pipes/separator/separator';
     ItemDetailsPage,
     ListPage,
 	InfaqPage,
-	PhotoPage,BeritaPage,SekitarKitaPage,DakwahPage,DetailArtikelPage,LoginPage,VideoListPage,VideoPage,DetailPhotoPage
+	PhotoPage,BeritaPage,SekitarKitaPage,DakwahPage,DetailArtikelPage,LoginPage,VideoListPage,VideoPage,DetailPhotoPage,InfaqInfoTabPage,InfaqAllInfoPage,
+  InfaqPeruserPage
   ],
   providers: [
     StatusBar,
@@ -60,7 +69,7 @@ import { SeparatorPipe } from '../pipes/separator/separator';
     RemoteServiceProvider,
 	BarcodeScanner,
 	Toast,Geolocation,Globalization
-    
+
   ]
 })
 export class AppModule {}

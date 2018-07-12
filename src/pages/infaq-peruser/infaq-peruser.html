@@ -1,6 +1,5 @@
 <!--
   Generated template for the InfaqPage page.
-
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
@@ -15,18 +14,22 @@
 
 
 <ion-content padding>
-  <h1>
-    <button ion-button color="dark" full round (click)="scan()">Scan Jimpitan</button>
 
-  </h1>
-<div *ngIf="productFound">
+<div *ngIf="stsLogin == 0; else other_content">
+<ion-row no-padding>
 
-    <h2 ion-text color="dark">Laporan Tromol {{kodeBarcode}}</h2>
-  <div>
+  <ion-col text-center>
+    <button ion-button color="dark" full round (click)="inputSetoranInfaq()">Setor Infaq</button>
+    <button ion-button color="secondary" full round (click)="getLaporanInfaq()">Laporan Infaq</button>
+  </ion-col>
+<div *ngIf="laporanFound">
+  <div padding>
+    <h2 style="text-align:center;">Laporan Infaq {{currentLoggedinUsername}} </h2>
         <div style="display: block">
 
           <canvas baseChart
                   [datasets]="barChartData"
+                  [colors]="chartColors"
                   [labels]="barChartLabels"
                   [options]="barChartOptions"
                   [legend]="barChartLegend"
@@ -34,9 +37,17 @@
                   (chartHover)="chartHovered($event)"
                   (chartClick)="chartClicked($event)"></canvas>
         </div>
-      <h2 ion-text color="dark">Total Rp.{{dataGraph.total_all | separator}}</h2>
-    <ion-item *ngFor="let item of dataGraph.data">
-        {{item.bulan}} : Rp. {{item.total | separator }}
+
+
+    <ion-item *ngFor="let item of dataLaporan.data">
+        {{item.bulan}} : Rp.  {{item.total | separator}}
       </ion-item>
+        <h2 ion-text color="dark">Total Rp.{{dataLaporan.total_all | separator}}</h2>
   </div>
+
 </div>
+</ion-row>
+</div>
+
+<ng-template #other_content>Please Login First</ng-template>
+</ion-content>

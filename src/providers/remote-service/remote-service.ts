@@ -153,4 +153,41 @@ getLaporanUsername(username)
 			});
 		  });
 	}
+
+  getLaporanGrafikTromol(barcodeData)
+  {
+    return new Promise(resolve => {
+			this.http.get(this.apiUrl+'/grapik/get_graph_month/'+barcodeData).subscribe(data => {
+			  resolve(data);
+			  console.log('Barcode Data : '+barcodeData);
+			  console.log('Data response : '+data);
+			}, err => {
+			  console.log(err);
+			});
+		  });
+  }
+  getLaporanGrafikAllTromol()
+  {
+    return new Promise(resolve => {
+			this.http.get(this.apiUrl+'/grapik/get_graph_all').subscribe(data => {
+			  resolve(data);
+			  //console.log('Barcode Data : '+barcodeData);
+			  console.log('Data response : '+data);
+			}, err => {
+			  console.log(err);
+			});
+		  });
+  }
+  getLaporanGrafikUser(username)
+  {
+    return new Promise(resolve => {
+			this.http.get(this.apiUrl+'/grapik/get_graph_user/'+username).subscribe(data => {
+			  resolve(data);
+			  //console.log('Barcode Data : '+barcodeData);
+			  console.log('Data response : '+data);
+			}, err => {
+			  console.log(err);
+			});
+		  });
+  }
 }

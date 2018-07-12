@@ -9,20 +9,15 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Infaq</ion-title>
+    <ion-title>Infaq </ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <h1>
-    <button ion-button color="dark" full round (click)="scan()">Scan Jimpitan</button>
 
-  </h1>
-<div *ngIf="productFound">
-
-    <h2 ion-text color="dark">Laporan Tromol {{kodeBarcode}}</h2>
-  <div>
+  <div padding>
+      <h2 style="text-align:center;">Laporan Infaq Semua Tromol</h2>
         <div style="display: block">
 
           <canvas baseChart
@@ -32,11 +27,14 @@
                   [legend]="barChartLegend"
                   [chartType]="barChartType"
                   (chartHover)="chartHovered($event)"
-                  (chartClick)="chartClicked($event)"></canvas>
+                  (chartClick)="chartClicked($event)"
+                  [colors]="chartColors"></canvas>
         </div>
-      <h2 ion-text color="dark">Total Rp.{{dataGraph.total_all | separator}}</h2>
-    <ion-item *ngFor="let item of dataGraph.data">
-        {{item.bulan}} : Rp. {{item.total | separator }}
-      </ion-item>
+        <ion-item *ngFor="let item of arrayData">
+            {{item.bulan}} : Rp. {{item.total | separator}}
+          </ion-item>
+        <h2 ion-text color="dark">Total Rp.{{dataTotalInfaq | separator}}</h2>
+
   </div>
-</div>
+
+</ion-content>
