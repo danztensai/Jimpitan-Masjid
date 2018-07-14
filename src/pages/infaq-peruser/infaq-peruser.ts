@@ -6,6 +6,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { RemoteServiceProvider } from '../../providers/remote-service/remote-service';
 import { CurrencyPipe } from '@angular/common';
 import { Globalization } from '@ionic-native/globalization';
+import { KirimInfaqPage } from '../kirim-infaq/kirim-infaq';
 
 /**
  * Generated class for the InfaqPeruserPage page.
@@ -263,6 +264,11 @@ export class InfaqPeruserPage {
     });
 
   }
+
+  goToInfaqPage()
+  	{
+  		this.navCtrl.push(KirimInfaqPage);
+  	}
 
   public barChartOptions:any = {
     scaleShowVerticalLines: false,

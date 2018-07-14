@@ -279,7 +279,11 @@ public barChartOptions:any = {
 public barChartLabels:string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
 public barChartType:string = 'bar';
 public barChartLegend:boolean = true;
-
+public chartColors: Array<any> = [
+  { // all colors in order
+    backgroundColor: ['#0000ff','#0000ff','#0000ff','#0000ff']
+  }
+]
 public barChartData:any[] = [
   {data: [65, 59, 80, 81, 56, 55, 40], label: 'Bulan'}
 ];

@@ -3,6 +3,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
@@ -19,7 +20,7 @@ import { DetailPhotoPage } from '../pages/detail-photo/detail-photo';
 import { InfaqInfoTabPage } from '../pages/infaq-info-tab/infaq-info-tab';
 import { InfaqAllInfoPage } from '../pages/infaq-all-info/infaq-all-info';
 import { InfaqPeruserPage } from '../pages/infaq-peruser/infaq-peruser';
-
+import { KirimInfaqPage } from '../pages/kirim-infaq/kirim-infaq';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -46,7 +47,7 @@ import { ChartsModule } from 'ng2-charts';
 	InfaqPage,
 	PhotoPage,BeritaPage,SekitarKitaPage,DakwahPage,DetailArtikelPage,LoginPage,VideoListPage,VideoPage,DetailPhotoPage,
   SeparatorPipe,
-  InfaqInfoTabPage,InfaqAllInfoPage,InfaqPeruserPage
+  InfaqInfoTabPage,InfaqAllInfoPage,InfaqPeruserPage,KirimInfaqPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +61,7 @@ import { ChartsModule } from 'ng2-charts';
     ListPage,
 	InfaqPage,
 	PhotoPage,BeritaPage,SekitarKitaPage,DakwahPage,DetailArtikelPage,LoginPage,VideoListPage,VideoPage,DetailPhotoPage,InfaqInfoTabPage,InfaqAllInfoPage,
-  InfaqPeruserPage
+  InfaqPeruserPage,KirimInfaqPage
   ],
   providers: [
     StatusBar,

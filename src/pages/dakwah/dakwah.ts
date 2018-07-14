@@ -49,7 +49,7 @@ totalPage = 0;
   ionViewDidLoad() {
     console.log('ionViewDidLoad DakwahPage');
   }
-  
+
   getArtikel() {
 	  let loading = this.loadingController.create({content : "Fetching Data,please wait..."});
   this.restProvider.getArtikelLoadMore(this.page,'dakwah')
@@ -84,11 +84,11 @@ totalPage = 0;
     infiniteScroll.complete();
   }, 1000);
 }
-detailArtikel(artikeId)
-	{
-		this.navCtrl.push(DetailArtikelPage,{
-			artikelId: artikeId
-		});
-	}
-  
+  detailArtikel(artikeId)
+  	{
+  		this.navCtrl.push(DetailArtikelPage,{
+  			artikelId: artikeId
+  		});
+  	}
+    
 }

@@ -32,7 +32,9 @@
                   [legend]="barChartLegend"
                   [chartType]="barChartType"
                   (chartHover)="chartHovered($event)"
-                  (chartClick)="chartClicked($event)"></canvas>
+                  (chartClick)="chartClicked($event)"
+                  [colors]="chartColors"
+                  ></canvas>
         </div>
       <h2 ion-text color="dark">Total Rp.{{dataGraph.total_all | separator}}</h2>
     <ion-item *ngFor="let item of dataGraph.data">
