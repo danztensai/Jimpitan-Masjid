@@ -11,7 +11,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-berita',
   templateUrl: 'berita.html',
@@ -32,10 +32,10 @@ totalPage = 0;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public restProvider:RemoteServiceProvider,public loadingController:LoadingController,private sanitizer: DomSanitizer) {
-	  
+
 	  //this.getArtikelBerita();
 	  this.getArtikel();
-	  
+
   }
 
   getArtikelBerita() {
@@ -50,7 +50,7 @@ totalPage = 0;
       console.log(this.responseServer);
     });
   }
-  
+
   getArtikel() {
   this.restProvider.getArtikelLoadMore(this.page,'berita')
      .subscribe(
@@ -63,7 +63,7 @@ totalPage = 0;
        },
        error =>  this.errorMessage = <any>error);
 }
-  
+
   doInfinite(infiniteScroll) {
   this.page = this.page+1;
   console.log('Get Page'+this.page);
@@ -85,22 +85,22 @@ totalPage = 0;
     infiniteScroll.complete();
   }, 1000);
 }
-  
+
    transformHTML(html)
   {
 	 return this.sanitizer.bypassSecurityTrustHtml(html);
   }
-  
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad BeritaPage');
   }
-	
+
 	detailArtikel(artikeId)
 	{
 		this.navCtrl.push(DetailArtikelPage,{
 			artikelId: artikeId
 		});
 	}
-  
-  
+
+
 }

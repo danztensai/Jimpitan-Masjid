@@ -10,7 +10,7 @@ import { HelloIonicPage } from '../hello-ionic/hello-ionic';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -23,7 +23,7 @@ export class LoginPage {
 	stsLogin : any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public restProvider:RemoteServiceProvider, private toast: Toast) {
    this.stsLogin =  localStorage.getItem('statusLogin');
-   
+
    console.log("stsLogin loh : "+this.stsLogin);
    console.log(localStorage.getItem('usernameLogin'));
   }
@@ -48,15 +48,15 @@ export class LoginPage {
 							console.log(toast);
 						  }
 						);
-						
-						
+
+
 			  }else{
 				  console.log('Login Success');
 				  localStorage.setItem('statusLogin','0');
 				  localStorage.setItem('usernameLogin',this.loginData.username);
 				    this.navCtrl.setRoot(HelloIonicPage);
 			  }
-			 
+
 			});
   }
   doLogout()
@@ -65,6 +65,6 @@ export class LoginPage {
 	  this.stsLogin = '1';
 	  localStorage.removeItem('usernameLogin');
 	  this.navCtrl.setRoot(this.navCtrl.getActive().component);
-	 
+
   }
 }

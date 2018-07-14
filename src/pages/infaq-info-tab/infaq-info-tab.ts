@@ -12,7 +12,7 @@ import { InfaqPeruserPage } from '../infaq-peruser/infaq-peruser';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-infaq-info-tab',
   templateUrl: 'infaq-info-tab.html',

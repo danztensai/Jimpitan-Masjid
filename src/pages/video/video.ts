@@ -8,7 +8,6 @@ import { LoadingController } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-video',
   templateUrl: 'video.html',

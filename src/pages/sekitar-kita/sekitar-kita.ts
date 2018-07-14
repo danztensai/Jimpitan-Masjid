@@ -11,7 +11,6 @@ import { LoadingController } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-sekitar-kita',
   templateUrl: 'sekitar-kita.html',
@@ -33,12 +32,12 @@ totalPage = 0;
    //this.getArtikelBerita();
    this.getArtikel();
   }
-  
+
      transformHTML(html)
   {
 	 return this.sanitizer.bypassSecurityTrustHtml(html);
   }
-  
+
 getArtikelBerita() {
     this.restProvider.getArticle('sekitar')
     .then(data => {
@@ -51,7 +50,7 @@ getArtikelBerita() {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SekitarKitaPage');
   }
-  
+
   getArtikel() {
   this.restProvider.getArtikelLoadMore(this.page,'sekitar')
      .subscribe(

@@ -15,7 +15,7 @@ import { Globalization } from '@ionic-native/globalization';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-kirim-infaq',
   templateUrl: 'kirim-infaq.html',

@@ -11,7 +11,6 @@ import { LoadingController } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-video-list',
   templateUrl: 'video-list.html',
@@ -36,13 +35,13 @@ responseServer:any;
     .then(data => {
 		 loading.dismissAll();
       this.responseServer = data;
-	  
+
 	  this.listVideo = this.responseServer.list_video;
-	  
+
       console.log(this.responseServer);
     });
   }
-  
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad VideoListPage');
   }

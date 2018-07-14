@@ -9,7 +9,6 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-detail-artikel',
   templateUrl: 'detail-artikel.html',
@@ -26,18 +25,18 @@ isiArtikel:any;
   {
 	 return this.sanitizer.bypassSecurityTrustHtml(html);
   }
-  
+
   getArtikelDetail(artikelId) {
     this.restProvider.getDetailArtikel(artikelId)
     .then(data => {
       this.responseServer = data;
 	  console.log('Response JSON isi_artikel:'+data);
 	  this.isiArtikel = this.responseServer.isi_artikel;
-	 
+
       console.log('Response JSON Server : '+this.responseServer);
     });
   }
-  
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailArtikelPage');
   }

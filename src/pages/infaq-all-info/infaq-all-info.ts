@@ -11,7 +11,6 @@ import { Toast } from '@ionic-native/toast';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-infaq-all-info',
   templateUrl: 'infaq-all-info.html',

@@ -15,7 +15,7 @@ import { KirimInfaqPage } from '../kirim-infaq/kirim-infaq';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-infaq-peruser',
   templateUrl: 'infaq-peruser.html',

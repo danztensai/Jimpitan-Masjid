@@ -11,7 +11,7 @@ import { LoadingController } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-dakwah',
   templateUrl: 'dakwah.html',
@@ -90,5 +90,5 @@ totalPage = 0;
   			artikelId: artikeId
   		});
   	}
-    
+
 }

@@ -10,7 +10,7 @@ import { LoadingController } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-photo',
   templateUrl: 'photo.html',
@@ -38,7 +38,7 @@ responseServer:any;
     .then(data => {
 		 loading.dismissAll();
       this.responseServer = data;
-	 
+
 	  this.listAlbum = this.responseServer.list_album;
       console.log(this.listAlbum);
     });
