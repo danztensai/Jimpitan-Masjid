@@ -13,7 +13,7 @@ import 'rxjs/add/operator/catch';
 */
 @Injectable()
 export class RemoteServiceProvider {
-apiUrl = 'http://122.129.112.169/saptadi/muhajirin';
+apiUrl = 'http://122.129.112.169/opik/masjid_jami/';
 
  constructor(public http: HttpClient,public httpC: Http) {
   console.log('Hello RestServiceProvider Provider');
