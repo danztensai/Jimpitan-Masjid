@@ -50,6 +50,10 @@ export class KirimInfaqPage {
   lembar7:number = 0 ;
   jumlah7:number = 0 ;
 
+  nilai8:number = 500 ;
+  lembar8:number = 0 ;
+  jumlah8:number = 0 ;
+
   nonBundle: number = 0 ;
   jumlahTotal : any ;
 
@@ -212,7 +216,7 @@ export class KirimInfaqPage {
 
    console.log('Clicked inputsetoran Infaq with kodeBarcode: '+this.kodeBarcode);
    var total = ((this.nilai1 * this.lembar1) + (this.nilai2 * this.lembar2) + (this.nilai3 * this.lembar3) + (this.nilai4 * this.lembar4) + (this.nilai5 * this.lembar5) + (this.nilai6 * this.lembar6) +
-   (this.nilai7 * this.lembar7 ));
+   (this.nilai7 * this.lembar7 ) + (this.nilai8 * this.lembar8 ));
    total = total * 1 ;
    this.jumlahTotal = total + (this.nonBundle * 1);
 
