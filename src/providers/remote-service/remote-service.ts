@@ -23,7 +23,7 @@ apiUrl = 'http://122.129.112.169/opik/masjid_jami/';
 
 
 getArtikelLoadMore(page,tipe): Observable<string[]> {
-  return this.httpC.get(this.apiUrl+'/artikel_edit/daftar_deskripsi/'+page+'/'+tipe)
+  return this.httpC.get(this.apiUrl+'/artikel/daftar_deskripsi/'+page+'/'+tipe)
                   .map(this.extractData)
                   .catch(this.handleError);
 }
